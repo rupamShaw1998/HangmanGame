@@ -27,12 +27,13 @@ const KEYS = [
   "z",
 ];
 
-export function Keyboard(params) {
+export function Keyboard({ addGuessedLetter }) {
   return (
     <div className="keyboard">
       {KEYS.map((key, i) => (
         <button
           key={i}
+          onClick={() => addGuessedLetter(key)}
         >
           {key}
         </button>

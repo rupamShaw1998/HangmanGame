@@ -24,11 +24,11 @@ const RIGHT_LEG = (
 
 const BODY_PARTS = [HEAD, BODY, LEFT_ARM, RIGHT_ARM, LEFT_LEG, RIGHT_LEG];
 
-export function Drawing() {
+export function Drawing({ wrongGuesses }) {
 
   return (
     <div className="drawing">
-      {BODY_PARTS}
+      {BODY_PARTS.slice(0, wrongGuesses)}
       <div className="rope" />
       <div className="hanger" />
       <div className="pole" />

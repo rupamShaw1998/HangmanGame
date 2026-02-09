@@ -1,6 +1,6 @@
-export function Word(params) {
-  const wordToGuess = "test";
-  const guessedLetters = ['e', 'r', 't'];
+export function Word({ wordToGuess, guessedLetters }) {
+  // const wordToGuess = "test";
+  // const guessedLetters = ['e', 'r', 't'];
 
   return (
     <div className="word">
