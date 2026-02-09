@@ -5,7 +5,7 @@ h1 {
 }
 
 .container {
-  max-width: 800px;
+  max-width: 700px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -30,7 +30,7 @@ h1 {
 
 .pole {
   width: 10px;
-  height: 375px;
+  height: 350px;
   background: black;
   margin-left: 120px;
 }
@@ -112,4 +112,50 @@ h1 {
   right: 0;
   rotate: -60deg;
   transform-origin: right bottom;
+}
+
+.word {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 3rem;
+  font-family: monospace;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.word > span {
+  border-bottom: 7px solid black;
+}
+
+.keyboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  gap: 0.5rem;
+}
+
+.keyboard > button {
+  width: 100%;
+  background: none;
+  font-size: 2rem;
+  padding: 0.5rem;
+  aspect-ratio: 1/1;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: black;
+  border: 3px solid black;
+  font-weight: bold;
+}
+
+.keyboard > button.active {
+  background-color:  hsl(200, 100%, 50%);
+  color: white; 
+}
+
+.keyboard > button.inactive {
+  opacity: 0.3;
+}
+
+.keyboard > button:hover:not(:disabled),
+.keyboard > button:focus:not(:disabled) {
+  background-color:  hsl(200, 100%, 50%);
 }
