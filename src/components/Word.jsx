@@ -1,6 +1,4 @@
-export function Word({ wordToGuess, guessedLetters }) {
-  // const wordToGuess = "test";
-  // const guessedLetters = ['e', 'r', 't'];
+export function Word({ wordToGuess, guessedLetters, reveal }) {
 
   return (
     <div className="word">
@@ -8,7 +6,10 @@ export function Word({ wordToGuess, guessedLetters }) {
         <span
           key={i}
         >
-          <span style={{ visibility: guessedLetters.includes(letter) ? "visible" : "hidden" }}>
+          <span style={{
+            visibility: guessedLetters.includes(letter) || reveal ? "visible" : "hidden",
+            color:  !guessedLetters.includes(letter) && reveal ? "red" : "black"
+          }}>
             {letter}
           </span>
         </span>

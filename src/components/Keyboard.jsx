@@ -27,17 +27,26 @@ const KEYS = [
   "z",
 ];
 
-export function Keyboard({ addGuessedLetter }) {
+export function Keyboard({ addGuessedLetter, activeLetters, inactiveLetters, isDisabled }) {
   return (
     <div className="keyboard">
-      {KEYS.map((key, i) => (
-        <button
-          key={i}
-          onClick={() => addGuessedLetter(key)}
-        >
-          {key}
-        </button>
-      ))}
+      {KEYS.map((key, i) => {
+        const active = activeLetters.includes(key);
+        const inactive = inactiveLetters.includes(key);
+        return (
+          <button
+            key={i}
+            onClick={() => addGuessedLetter(key)}
+            className={`
+              ${active ? "active" : ""}
+              ${inactive ? "inactive" : ""}
+            `}
+            disabled={isDisabled || active || inactive}
+          >
+            {key}
+          </button>
+        )
+      })}
     </div>
   )
 }
